@@ -1,0 +1,15 @@
+<div class="row cardset">
+  <div  class="col-md-4" *ngFor="let event of events">
+      <div *ngIf="isLogin">
+          <button class="btn btn-outline-success"><span class="fa fa-edit"></span> Edit</button>
+          <button class="btn btn-outline-danger"><span class="fa fa-minus"></span> Delete</button>
+        </div>
+    <div routerLink="/event-details/{{event.mainEventId}}" class="card boxed-bottom">
+      <img class="card-img-top" [src]="event.bannerUrl" alt="Card image cap" style="height:100px;">
+      <div class="card-body">
+        <p class="card-text">{{event.title}}</p>
+        <p class="card-subtitle text-muted">{{event.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

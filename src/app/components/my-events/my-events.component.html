@@ -1,0 +1,17 @@
+<div class="row cardset">
+  <div class="col-md-4" *ngFor="let event of events">
+    <button class="btn btn-warning " role="button" routerLink="/my-portal/events/edit/{{event.mainEventId}}">
+      Edit
+    </button>
+    <button class="btn btn-danger" role="button" routerLink="/people/edit/{{event.mainEventId}}">
+      Delete
+    </button>
+    <div routerLink="/event-details/{{event.mainEventId}}" class="card boxed-bottom">
+      <img class="card-img-top" [src]="event.bannerUrl" alt="Card image cap" style="height:100px;">
+      <div class="card-body">
+        <p class="card-text">{{event.title}}</p>
+        <p class="card-subtitle text-muted">{{event.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

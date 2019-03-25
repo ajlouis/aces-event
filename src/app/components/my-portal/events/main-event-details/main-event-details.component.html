@@ -1,0 +1,136 @@
+<div class="row">
+  <div class="col-md-12">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <!-- <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      </ol> -->
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <img  class="d-block w-100" [src]="event.bannerUrl"alt="Current slide">
+          <div class="carousel-caption d-none d-md-block">
+            <!-- <h3>{{event.title}}</h3>
+            <p>{{event.description}}</p> -->
+          </div>
+        </div>
+      <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a> -->
+    </div>
+  </div>
+</div>
+</div>
+
+<section id="Main">
+  <section class="py-5">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 style="text-align:center;">{{event.title}}</h1>
+          <p>
+            {{event.description}}
+          </p>
+        </div>
+        <div class="col-md-4">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Content -->
+  <div class="container-fluid">
+    <div class="row" style="margin: 0px;">
+      <div class="col-md-3">
+
+        <div class="card">
+
+          <div class="card-body">
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <b>Location: </b>{{event.locationId}}
+              </li>
+              <li class="list-group-item">
+                <b>Venue: </b>{{event.venue}}
+              </li>
+              <li class="list-group-item">
+                <b>Starts On: </b> {{event.startDate | date:'shortTime'}}
+              </li>
+              <li class="list-group-item">
+                <b>Ends On: </b> {{event.endDate | date:'shortTime'}}
+              </li>
+              <li class="list-group-item">
+                <b>Time: </b>9:30 AM 
+              </li>
+              <li class="list-group-item">
+                <b>Duration: </b>1 Day.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="subEvent-scrollable-div">
+        <app-sub-event-view [mainEventId]="event.mainEventId">   </app-sub-event-view>
+      </div>
+
+    </div>
+    <hr>
+    <h6>People Involved</h6>
+
+    <div class="row">
+      <div class="peopleInvolved-scrollable-div">
+        <app-event-people-list [mainEventId]="event.mainEventId"></app-event-people-list>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <hr>
+</div>
+
+<div class="container" style=" background-color: #76787a; color: #ffffff;">
+  <div class="row" style="margin: 0;">
+    <div class="col-md-6 border-right">
+      <address>
+        Posted by <a href="mailto:***@example.com">Jon Doe</a>.<br>
+
+      </address>
+      <h4 style="text-align:center">Event Location</h4>
+      <div class="mapouter" style="margin:30px;">
+        <div class="gmap_canvas">
+          <iframe width="400" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+          </iframe>
+          <a href="https://www.embedgooglemap.net"></a></div>
+        <style>.mapouter{text-align:center;height:500;width:600;}.gmap_canvas {overflow:hidden;background:none!important;height:500;width:600;}
+              </style>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+     <!-- <h4>Send Us A Message</h4> 
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" style="max-width: 380px">
+      </div>
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" id="email" style="max-width: 380px">
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea class="form-control" rows="3" id="message" style="max-width: 380px"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-outline-light">I Am Attending</button>
+      </div> -->
+      <app-rsvp></app-rsvp>
+    </div>
+  </div>
+</div>

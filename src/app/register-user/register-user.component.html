@@ -1,0 +1,107 @@
+<!-- <form [formGroup]="userForm" (ngSubmit)="submit(userForm.value)">
+  <div class="container">
+
+    <h2>Add Profile</h2>
+
+    <h4>{{user.firstName}} {{user.lastName}}</h4>
+    <hr>
+    <div class="row">
+      <div>
+        <img [src]="user.image" style="width:200px;height:200px;">
+        <br>
+        <br>
+        <input type="file" class="input-group">
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="form-group">
+          <label for="FirstName" class="control-label" for="FirstName">Firstname </label>
+          <input id="FirstName" value="Kara" class="form-control"  formControlName="firstName">
+          <span for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="LastName" class="control-label">LastName</label>
+          <input id="LastName" value="Danvers" class="form-control" formControlName="lastName">
+          <span class="text-danger field-validation-valid" data-valmsg-for="FullName" data-valmsg-replace="true"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="Email">Email</label>
+          <input value="karaDanvers@deo.com" class="form-control" type="text" id="Email" name="Email" formControlName="email">
+          <span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="PhoneNumber">Phone Number</label>
+          <input value="+111 000000" class="form-control" type="text" id="PhoneNumber" name="PhoneNumber"
+            formControlName="phoneNumber">
+          <span class="text-danger field-validation-valid" data-valmsg-for="PhoneNumber" data-valmsg-replace="true"></span>
+        </div>
+
+
+        <div class="form-group">
+          <input type="submit" [disabled]="!userForm.valid" value="Save" class="btn btn-default">
+        </div>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8MFkQqc2AoVMoNqEB51ND-dC8PBk0J6fOorvm_E45q1onyj1UgsBGoJAS81x-W6Xoz-S6TTlfvtC4x62o0JKJ_yl2aW3EK6U8nPErcjG5yyfjF-MOpPvy4CgccIMVKEUsjTe5HSnuI6U0_hVBcRvuMQ">
+      </div>
+    </div>
+  </div>
+</form> -->
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+  <div class="container">
+
+    <h2>Register for ASC Event</h2>
+    <hr>
+    <div class="row">
+
+      <div class="col-md-4">
+
+        <div class="form-group">
+          <label for="FirstName" class="control-label" for="FirstName">Firstname </label>
+          <input id="FirstName" value="Kara" class="form-control"  formControlName="firstName">
+          <span for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="LastName" class="control-label">LastName</label>
+          <input id="LastName" value="Danvers" class="form-control" formControlName="lastName">
+          <span class="text-danger field-validation-valid" data-valmsg-for="FullName" data-valmsg-replace="true"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="Email">Email</label>
+          <input value="karaDanvers@deo.com" class="form-control" type="text" id="Email" name="Email" formControlName="email">
+          <span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="PhoneNumber">Password</label>
+          <input value="+111 000000" class="form-control" type="text" id="PhoneNumber" name="PhoneNumber"
+            formControlName="phoneNumber">
+          <span class="text-danger field-validation-valid" data-valmsg-for="PhoneNumber" data-valmsg-replace="true"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="PhoneNumber">Confirm Password</label>
+          <input value="+111 000000" class="form-control" type="text" id="PhoneNumber" name="PhoneNumber"
+            formControlName="phoneNumber">
+          <span class="text-danger field-validation-valid" data-valmsg-for="PhoneNumber" data-valmsg-replace="true"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="PhoneNumber">Phone Number</label>
+          <input value="+111 000000" class="form-control" type="text" id="PhoneNumber" name="PhoneNumber"
+            formControlName="phoneNumber">
+          <span class="text-danger field-validation-valid" data-valmsg-for="PhoneNumber" data-valmsg-replace="true"></span>
+        </div>
+
+
+        <div class="form-group">
+          <input type="submit" [disabled]="!userForm.valid" value="Save" class="btn btn-info">
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

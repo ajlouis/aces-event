@@ -1,0 +1,74 @@
+
+  <!-- <p>
+    <button class="btn btn-outline-success"><span class="fa fa-plus"></span> Add</button>
+</p>
+
+<div style="width:400px; margin-left:5%">
+  <div class="row" *ngFor="let subEvent of subEvents$ | async">
+    <div style="width:500px" class="alert alert-info" role="button" data-toggle="collapse" data-target=
+      aria-expanded="false" aria-controls="collapseExample">
+      {{subEvent.title}}
+      <div style="float: right;">
+        <a routerLink="/contactUs"  routerLinkActive="router-link-active">Edit</a>
+      </div>
+    </div>
+    <div class="collapse" id="{{subEvent.subEventId}}">
+      <div class="card card-body">
+        <p>
+          This is the title of the subevent
+          This is the description of thimport {NgbModule} from '@ng-bootstrap/ng-bootstrap';e subevent. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur
+          bibendum justo non orci. Aliquam erat volutpat. Nullam faucibus mi quis velit. Praesent id justo in neque
+          elementum ultrices. Aliquam erat volutpat. Vivamus ac leo pretium faucibus. Fusce wisi.
+          {{subEvent.description}}
+        </p>
+        <div style="float:left">
+          <p>Starts at: {{subEvent.startDate | date:'shortTime'}}</p>
+          <p>Ends at:  {{subEvent.endDate | date:'shortTime'}}</p>
+        </div>
+      </div>
+
+    </div>
+    <br>
+
+  </div>
+</div> -->
+  <br>
+<p>
+  <button routerLink="/sub-event/new/{{mainEventId}}" class="btn btn-outline-success"><span class="fa fa-plus"></span> Add</button>
+</p>
+<p>
+  <ngb-accordion closeOthers="true">
+    <div *ngFor="let subEvent of newSubEvents">
+        <!--<div *ngFor="let subEvent of subEvents$ | async">-->
+
+      <ngb-panel *ngIf="subEvent.isNotDeleted" id="{{subEvent.subEventId}}" title="{{subEvent.title}}">
+
+        <ng-template ngbPanelContent>
+<p>
+  <a routerLink="/sub-event/edit/{{subEvent.subEventId}}" class="btn btn-warning">Edit</a>
+</p>
+<p>
+  <a   class="btn btn-danger" (click)="delete(subEvent.subEventId)">Delete</a>
+</p>
+<div>
+  <p>
+    {{subEvent.description}}If you are updating from a beta or RC version, check out our 1.0 Update Guide.
+
+    If you wish to collaborate, check out our issue list.
+    
+    Before submitting new issues, have a look at issues marked with the type: faq label.
+  </p>
+</div>
+<div style="float:left">
+  <p>Time:  {{subEvent.time}}</p>
+  <p>Starts at: {{subEvent.startDate | date:'mediumDate'}}</p>
+</div>
+<br>
+<br>
+<br>
+</ng-template>
+</ngb-panel>
+</div>
+</ngb-accordion>
+</p>
+

@@ -1,0 +1,61 @@
+<div>
+  <button type="button" class="btn btn-outline-success " routerLink="/people/new/{{mainEventId}}"><span class="fa fa-plus">Add</span></button>
+  </div>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let people of peopleInvolved">
+        <div class="card">
+          <div style="background-color:beige" class="card-header " id="headingOne" >
+            <h5 class="mb-0">
+              <button   class="btn btn-warning " role="button" routerLink="/people/edit/{{people.peopleInvolvedId}}" >
+                Edit   
+              </button>
+              <button class="btn btn-danger" (click)="delete(people.peopleInvolvedId)" role="button" routerLink="/people/edit/{{people.peopleInvolvedId}}" >
+                Delete  
+              </button>
+            </h5>
+          </div>
+          <div id="people1">
+            <div class="card-body">
+              <img class="card-img-top" [src]="people.photoURL" alt="Person Involved portrait">
+              <div class="card-body">
+                <p>Name: {{people.name}}</p>
+                <p>Description: {{people.description}}</p>
+                <p>Role: {{people.role}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+<!-- <div>
+  <button>Add Person</button>
+</div>
+<div class="row">
+  <div class="col-md-4" *ngFor="let people of peopleInvolved">
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#people1"
+              aria-expanded="true" aria-controls="collapseOne">
+              <div>{{people.name}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href=""> Edit </a> </div>
+            </button>
+          </h5>
+        </div>
+
+        <div id="people1" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <img class="card-img-top" [src]="people.photoURL" alt="Person Involved portrait">
+            <div class="card-body">
+              <p>Name: {{people.name}}</p>
+              <p>Description: {{people.description}}</p>
+              <p>Role: {{people.role}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

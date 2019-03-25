@@ -1,0 +1,27 @@
+ <div class="row">
+    <div class="container">
+        <form [formGroup]="eventPeopleForm" (ngSubmit)="onSubmit(eventPeopleForm.value)">  
+           <img class="card-img-top" [src]="" alt="Person Involved portrait">
+          <div class="alert alert-dark" role="alert">
+              <div class="input-group ">
+                <div class="input-group-prepend">
+              </div>
+              </div>
+              <input  name="UploadBanner" type="file" class="image"
+                name="myImage" accept="image/x-png,image/jpeg">
+            </div> 
+    
+            <label for="inputName" >Name</label>
+            <input type="value"  name="inputname"class="form-control"  placeholder="Name" formControlName="name">
+            <label for="inputDescription" >Description</label>
+            <input type="text"  class="form-control" id="inputDescription" placeholder="Description" formControlName="description">
+            <label for="inputRole" >Role</label>
+            <input type="text"  class="form-control" id="inputRole" placeholder="Role" formControlName="role">
+            <p>
+                <button class="btn btn-primary" type="submit" [disabled]="!eventPeopleForm.valid ">Save And Continue 
+                  <span class="fa fa-arrow-right"></span>
+                </button>
+            </p>
+          </form>
+    </div>  
+</div> 

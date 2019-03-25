@@ -1,0 +1,43 @@
+<p>
+    <p>
+<div class="row">
+    <div class="col-md-2">
+        <div class="card boxed-bottom" style="padding:10px; align-content:center;text-align:center;">
+            <p class="card-heading" style=" text-decoration-style:solid;background-color:#3b3b3b;color:#fff; margin:-10px -10px 10px -10px;">My
+                Account</p>
+
+            <img src="./AddEvent - EventPortal_files/profile.jpg" style="width:100px;height:100px;margin:auto;">
+            <p><a>Kara Danvers</a></p>
+            <p class="card-subtitle"><a routerLink="edit-user">Edit Profile</a></p>
+
+
+        </div>
+
+        <div class="card boxed-bottom" style="padding:10px;">
+            <p class="card-heading" style="text-align:center; text-decoration-style:solid;background-color:#3b3b3b;color:#fff; margin:-10px -10px 10px -10px;">My
+                Events</p>
+            <ul>
+                <li><a [routerLink]="['/my-portal/events/my-events']">My Events</a></li>
+                <li><a [routerLink]="['/my-portal/events/invitations']">Invitations</a></li>
+                <li><a [routerLink]="['/my-portal/events/new']">New Event</a></li>
+                <app-search-event></app-search-event>
+            </ul>
+
+        </div>
+
+        <div class="card boxed-bottom" style="padding:10px;">
+            <p class="card-heading" style="text-align:center; text-decoration-style:solid;background-color:#3b3b3b;color:#fff; margin:-10px -10px 10px -10px;">My
+                Contacts</p>
+            <ul>
+                <li><a [routerLink]="['/my-portal/contacts']">Contacts</a></li>
+                <li><a [routerLink]="['/my-portal/contacts/new']">Add</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <p>
+            
+                <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+ul li {
+    list-style: none;
+
+}
+
+.quick-list {
+    list-style-type: none
+}
+
+.cardset .card {
+    max-width: 300px;
+}
+
+.cardset {
+    margin: auto;
+}
+
+a {
+    color: blue;
+}

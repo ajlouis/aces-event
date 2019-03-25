@@ -1,0 +1,27 @@
+body {
+    background-color:whitesmoke;
+}
+
+/* .cardset .card {
+    max-width: 300px;
+} */
+.cardset{
+    margin:auto;
+}
+.inner-body{
+    background-color:#e4e4e4;
+}
+ul li{
+    list-style:none;
+}
+
+.side-nav li a{
+    text-decoration:none;
+    color: #696767;
+
+}
+.side-nav a:hover{
+    text-decoration:none;
+    color: #f00;
+
+}

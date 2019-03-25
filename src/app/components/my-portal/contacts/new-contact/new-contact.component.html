@@ -1,0 +1,36 @@
+<form [formGroup]="contactForm" (ngSubmit)="submit(contactForm.value)"> 
+<div class="container">
+        <h2>Add Contact</h2>
+    
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+    
+                <div class="form-group">
+                    <label class="control-label" for="FullName">FullName</label>
+                    <input class="form-control" type="text" id="FullName" name="FullName" value="" formControlName="fullName">
+                    <span class="text-danger field-validation-valid" data-valmsg-for="FullName" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="PhoneNumber">PhoneNumber</label>
+                    <input class="form-control" type="text" id="PhoneNumber" name="PhoneNumber" value="" formControlName="phoneNumber">
+                    <span class="text-danger field-validation-valid" data-valmsg-for="PhoneNumber" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="Email">Email</label>
+                    <input class="form-control" type="text" id="Email" name="Email" value="" formControlName="email">
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                </div>
+    
+                <div class="form-group">
+                    <input type="submit" [disabled]="!contactForm.valid" value="Save" class="btn btn-default">
+                </div>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8MFkQqc2AoVMoNqEB51ND-fHobZPXGQONOxMaoXZs0DqkJzpPr9LiHvHdvc0Qd4DmPnfoWYq8_h1qptHRFN9Be7QHtH8kzxlf-Jb4TRwbxkSkiUqVLTBCGdo3_98f4dLDWW-ODvIltDzwSJvCPT19FM">
+            </div>
+        </div>
+    
+       <!--  <div>
+            <a href="https://localhost:44322/user">Home</a>
+        </div> -->
+    </div>
+    </form>

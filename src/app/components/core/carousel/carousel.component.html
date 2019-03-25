@@ -1,0 +1,20 @@
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" *ngFor="let carouselItem of carouselItems; let index =index" data-slide-to="index"
+    [class.active]="index === 0"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div routerLink="/event-details/{{carouselItem.mainEventId}}"  class="carousel-item" *ngFor="let carouselItem of carouselItems; let index=index" [class.active]="index === 0" style="height:20vh;">
+      <img  class="d-block w-100" [src]="carouselItem.bannerUrl"alt="Current slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

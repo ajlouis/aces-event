@@ -1,0 +1,136 @@
+<h2>Create A New Event</h2>
+<hr>
+<div class="maineventform">
+    <div class="card text-center" style="margin:0px 30px;">
+        <div class="card-header bg-info" style="color: #fff;">
+            Main-Event Form
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">About Event</h5>
+            <p class="card-text"></p>
+
+            <form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm.value)">
+                <div class="form-row">
+                    <div class="col-md-4 small-form">
+                        <label for="Title">Event Title</label>
+                        <input formControlName="eventTitle" type="text" class="form-control" id="Title" name="Title"
+                            placeholder="eg. We Are Getting Married!!">
+                    </div>
+                    <div class="col-md-4 small-form mb-4">
+                        <label for="venue"> Venue:</label>
+                        <div class="input-group date" data-provide="venue">
+                            <input formControlName="venue" class="form-control" id="venue" placeholder="eg.The Batcave"
+                                name="Venue">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 small-form">
+                        <div class="form-group">
+                            <label for="cat">Event Category:</label>
+                            <select formControlName="eventCategory" class="form-control" id="cat" name="CategoryNum">
+                                <option>--Event Category--</option>
+                                <option value="[option1]">Wedding</option>
+                                <option value="2">Funeral</option>
+                                <option value="3">Naming Ceremony</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 small-form">
+                        <label for="date">Start Date:</label>
+                        <div class="input-group" data-provide="date">
+                            <input formControlName="startDate" class="form-control" id="date" placeholder="dd/mm/yyyy"
+                                name="startDate" type="date">
+                        </div>
+                        <!-- <div *ngIf="eventForm.get('startDate').errors.validDate" class="dateError">
+                            start date should be greater than today
+                        </div> -->
+                    </div>
+
+                    <div class="col-md-6 small-form">
+                        <label for="date">End Date:</label>
+                        <div class="input-group" data-provide="date">
+                            <input formControlName="endDate" class="form-control" id="date" placeholder="dd/mm/yyyy"
+                                name="endDate" type="date" min="today()">
+                        </div>
+                        <!-- <div *ngIf="eventForm.get('endDate').errors.validDate" class="dateError">
+                            end date should be greater than today or equal to today
+                        </div> -->
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3 float-left">
+                        <div class="form-group">
+                            <label for="description align-content-left">About Event:</label>
+                            <textarea formControlName="aboutEvent" name="Description" class="form-control" id="description"
+                                rows="6" placeholder="Write a brief description of the event"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <img [src]="imageUrl" class="img-thumbnail preview" alt="Banner Preview">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <p>Add Event Banner</p>
+                            <input type="file" formControlName="bannerUrl" name="bannerUrl" class="image" (change)="fileChanged($event)"
+                                name="myImage" accept="image/x-png,image/jpeg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="upload">Upload:</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div *ngIf="false">
+                </div> -->
+                <hr>
+
+                <div class="form-row">
+                    <div class="col-md-4 mb-5 small-form">
+                        <label for="location">Location</label>
+                        <input formControlName="location" type="text" class="form-control" id="location" placeholder="location of event"
+                            name="Location">
+                    </div>
+
+                    <div class="col-md-8 mb-3">
+                        <div id="map" style="width: 100%; height: 170px; position: relative; overflow: hidden;">
+                            <div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+                                <div class="gm-err-container">
+                                    <div class="gm-err-content">
+                                        <div class="gm-err-icon"><img src="https://maps.gstatic.com/mapfiles/api-3/images/icon_error.png"
+                                                draggable="false" style="user-select: none;"></div>
+                                        <div class="gm-err-title">Sorry! Something went wrong.</div>
+                                        <div class="gm-err-message">This page didn't load Google Maps correctly. See
+                                            the JavaScript console for technical details.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" formControlName="isPublic">
+                        <span class="slider round"></span>
+                    </label>
+                    <span>&nbsp;activate &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</span>
+                    <label class="switch">
+                        <input type="checkbox" formControlName="eventStatus">
+                        <span class="slider round"></span>
+                    </label>
+                    <span>&nbsp;public</span>
+                </div>
+                <hr>
+                <button type="submit" class="btn btn-primary">Save
+                <!-- <button type="submit" [disabled]="!eventForm.valid" class="btn btn-primary">Save -->
+                    And Continue <span class="fa fa-arrow-right"></span></button>
+            </form>
+        </div>
+    </div>
+</div>

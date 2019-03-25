@@ -1,0 +1,25 @@
+.carousel-item {
+  height: 50vh;
+  /* min-height: 300px; */
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.subEvent-scrollable-div {
+  width: 70%;
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-color: cadetblue
+}
+
+.peopleInvolved-scrollable-div{
+  width: 100%;
+  height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-color: cadetblue
+}

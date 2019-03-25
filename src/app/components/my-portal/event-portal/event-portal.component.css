@@ -1,0 +1,24 @@
+.card-heading {
+    text-align: center;
+    text-decoration-style: solid;
+    background-color: #3b3b3b;
+    color: #fff;
+    margin: -10px -10px 10px -10px;
+
+}
+
+
+ul li{
+    list-style:none;
+}
+
+.side-nav li a{
+    text-decoration:none;
+    color: blue;
+
+}
+.side-nav a:hover{
+    text-decoration:none;
+    color: #f00;
+
+}
